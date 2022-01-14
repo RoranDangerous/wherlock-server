@@ -6,7 +6,7 @@ const getToken = (room, player) => jwt.sign({ room, player }, SECRET_KEY);
 const validate = (token, callback) => jwt.verify(token, SECRET_KEY, callback);
 
 const corsConfig = {
-  origin: 'http://wherlock.iroman.ca',
+  origin: 'https://wherlock.iroman.ca',
   methods: ['GET', 'POST']
 }
 
