@@ -6,7 +6,7 @@ const getToken = (room, player) => jwt.sign({ room, player }, SECRET_KEY);
 const validate = (token, callback) => jwt.verify(token, SECRET_KEY, callback);
 
 const corsConfig = {
-  origin: 'http://localhost:3000',
+  origin: 'http://wherlock.iroman.ca',
   methods: ['GET', 'POST']
 }
 
