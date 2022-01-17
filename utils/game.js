@@ -2,6 +2,7 @@ const eventEmitter = require('../utils/events');
 
 const rooms = {}
 const GUESSES = 3;
+const QUESTIONS = 5;
 
 const generateRoomCode = () => {
   let code = '';
@@ -30,7 +31,8 @@ const create = (creator) => {
       players: {
         [creator]: {
           score: 0,
-          guesses: GUESSES
+          guesses: GUESSES,
+          questions: QUESTIONS,
         }
       }
     }
@@ -46,7 +48,8 @@ const addPlayer = (room, player) => {
   if(isValidRoom(room) && !(player in rooms[room].players)){
     rooms[room].players[player] = {
       score: 0,
-      guesses: GUESSES
+      guesses: GUESSES,
+      questions: QUESTIONS,
     };
   }
 }
@@ -107,6 +110,7 @@ const setWord = (room, word, category) => {
 const askQuestion = (room, player, question) => {
   rooms[room].question = question;
   rooms[room].questionPlayer = player;
+  rooms[room].players[player].questions -= 1;
   eventEmitter.emit('update', room);
 }
 
@@ -127,6 +131,7 @@ const nextGuesser = (room) => {
 const nextTurn = (room) => {
   Object.keys(rooms[room].players).forEach((p) => {
     rooms[room].players[p].guesses = GUESSES;
+    rooms[room].players[p].questions = QUESTIONS;
   })
   rooms[room].turn = (rooms[room].turn + 1) % Object.keys(rooms[room].players).length;
   rooms[room].guesser = (rooms[room].turn + 1) % Object.keys(rooms[room].players).length;
