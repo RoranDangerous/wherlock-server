@@ -165,7 +165,7 @@ const guess = (room, player, guess) => {
       rooms[room].players[player].score += 1
       nextTurn(room);
       eventEmitter.emit('update', room);
-    }, 5000);
+    }, 10000);
   }
   else {
     rooms[room].questions.push({
@@ -183,7 +183,7 @@ const guess = (room, player, guess) => {
       setTimeout(() => {
         nextTurn(room);
         eventEmitter.emit('update', room);
-      }, 5000);
+      }, 10000);
     }
   }
 
