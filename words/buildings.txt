@@ -10,9 +10,12 @@ garage
 hospital
 hotel
 library
-mall
+shopping mall
 museum
 prison
 restaurant
 school
 university
+bar
+club
+office

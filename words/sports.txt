@@ -1,28 +1,40 @@
 badminton
-bat
-bicycle
-box
-fitness
+cycling
+boxing
 frisbee
 golf
-gymnast
-helmet
+gymnastics
 hockey
-jump
+jumping
 karate
-kayak
-loser
-medal
-olympics
-race
-skate
-ski
-snowboard
+kayaking
+racing
+skating
+skiing
+snowboarding
 soccer
-stadium
 surfing
 swimming
-team
-winner
 tennis
-wrestler
+wrestling
+lacrosse
+skateboarding
+running
+baseball
+basketball
+volleyball
+table tennis
+ice skating
+roller skating
+cricket
+rugby
+darts
+football
+bowling
+horse racing
+archery
+rock climbing
+sumo
+fencing
+scuba diving
+kickboxing
